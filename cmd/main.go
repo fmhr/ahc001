@@ -66,6 +66,10 @@ func run(exe string, in string, out string) (int, int) {
 	return score, loop
 }
 
+func parallelRun() {
+
+}
+
 func parseScore(s string) int {
 	ms := `score=([0-9]+)`
 	re := regexp.MustCompile(ms)
