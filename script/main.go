@@ -23,7 +23,7 @@ var P string = ""
 
 func testn(n int) {
 	inputpaths, names := dirwalk(P + "/tools/in")
-	exe := P + "/src/solver"
+	exe := P + "/solver"
 	out := strings.Replace(names[0], "txt", "out", 1)
 	sumScore := 0
 	for i := 0; i < n; i++ {
@@ -37,7 +37,7 @@ func testn(n int) {
 
 func testRun() {
 	inputpaths, names := dirwalk(P + "/tools/in")
-	exe := P + "/src/solver"
+	exe := P + "/solver"
 	out := strings.Replace(names[50], "txt", "out", 1)
 	score, n := run(exe, inputpaths[50], out)
 	log.Println(n)
@@ -48,7 +48,6 @@ func testRun() {
 func run(exe string, in string, out string) (int, int) {
 	cmdStr := exe + "<" + in + ">" + out
 	cmds := []string{"sh", "-c", cmdStr}
-	log.Println(cmds)
 	cmd := exec.Command(cmds[0], cmds[1:]...)
 	var stderr bytes.Buffer
 	cmd.Stderr = &stderr
