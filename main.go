@@ -363,8 +363,7 @@ func annealing(req []Req) {
 		continue
 	END:
 	}
-	log.Println("なんでここにでないの")
-	fmt.Printf("score=%v loop=%d", int(math.Round(s.score)), loop)
+	log.Printf("score=%v loop=%d", int(math.Round(s.score)), loop)
 	s.output()
 }
 
